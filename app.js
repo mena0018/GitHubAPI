@@ -1,8 +1,9 @@
 const API = 'https://api.github.com/users/';
+const get = (param)=> document.querySelector(`${param}`);
 
-const form = document.querySelector(".form-github-recherche");
-const inpRecherche = document.querySelector('.inp-recherche');
-const affichage = document.querySelector(".affichage");
+const form = get(".form-github-recherche");
+const inpRecherche = get('.inp-recherche');
+const affichage = get(".affichage");
 
 async function dataGitHub(utilisateur) {
 
@@ -17,9 +18,16 @@ function creationCarte(user) {
         <img src="${user.avatar_url}" alt="icon avatar" class="avatar">
         <h2>${user.login}</h2>
         <ul class="cont-infos">
-            <li class="followers">Followers : ${user.followers}</li>
-            <li class="etoiles">Repos : ${user.public_repos}</li>
-            <li class="bio">${user.bio}</li>
+            <li class="followers">${check(user.name)}</li>
+            <li class="followers">Location : ${check(user.location)}</li>
+            <li class="followers">Twitter : ${check(user.twitter_username)}</li>
+            <li class="followers">Company : ${check(user.company)}</li>
+            <li class="followers">Lien : ${check(user.blog)}</li>
+            
+            <li class="followers">Followers : ${check(user.followers)}</li>
+            <li class="followers">Followings : ${check(user.following)}</li>
+                <li class="etoiles">Repos : ${check(user.public_repos)}</li>
+                <li class="bio">${user.bio === null ? "Ce profil n'as pas de bio" : `${user.bio}`}</li>
         </ul>
     </div>
     `;
@@ -34,3 +42,10 @@ form.addEventListener("submit", (e) => {
         inpRecherche.value = "";
     }
 });
+
+function check(param) {
+    if (param === null || param === "") {
+        return "Pas disponible"
+    }
+    return `${param}`
+}
