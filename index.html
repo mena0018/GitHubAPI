@@ -1,19 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Github API</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"/>
+  </head>
+  <body>
 
-    <h1>Recherche d'utilisateur GitHub</h1>
+    <h1>Search GitHub username</h1>
     <form class="form-github-recherche">
-        <input class="inp-recherche" type="text" placeholder="Recherche un utilisateur de GitHub !">
+    <div class="input-container">
+        <input class="inp-recherche" type="text" placeholder="Search GitHub username..."/>
+        <button class="btn-search">Search</button>
+    </div>
     </form>
 
-    <div class="affichage"></div>
+    <div class="affichage">
+      <div class="carte">
+        <img src="./assets/img/github.png" alt="" alt="icon avatar" class="avatar">
+        <h2 class="login"></h2>
+        <h2 class="nom"></h2>
+        <ul class="cont-infos">  
+				<div class="follows">
+					<li class="followers">Test</li>
+					<li class="following">Test</li>
+					<li class="repos">Test</li>
+				</div>
+					<li class="bio">Test</li>
+            <li class="location">Test</li>
+            <li class="twitter-username">Test </li>
+            <li class="company">Test</li>
+            <li class="link">Test</li>
+			</ul>
+					<img class="logo-location" src="./assets/img/icon-location.svg"/>
+					<img class="logo-company" alt="logo" src="./assets/img/icon-company.svg"/>
+					<img class="logo-website" alt="logo-website" src="./assets/img/icon-website.svg"/>
+					<img class="logo-twitter" alt="logo twitter" src="./assets/img/icon-twitter.svg"/>
+      </div>
+    </div>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
