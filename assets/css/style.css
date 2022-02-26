@@ -25,12 +25,6 @@ h1 {
     margin: 40px 0 50px 0;
 }
 
-h2 {
-    margin-top: 100px;
-    text-align: center;
-    font-size: 25px;
-}
-
 .affichage {
     display: flex;
     justify-content: center;
@@ -59,34 +53,68 @@ form, .affichage {
     list-style-type: none;
 }
 
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 100px 0 30px;
+    font-size: 25px;
+}
+
 .input-container {
     display:flex;
     justify-content: center;
     align-items: center;
-}
-
-.inp-recherche {
-    display: block;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    padding: 15px;
+    padding: 10px;
     font-size: 25px;
-    margin: 0 auto;
     background-color: var(--bg-content);
     border-radius: 15px;
-    color: var(--text);
     background-image: url('../img/icon-search.svg');
     background-repeat: no-repeat;
     background-position-x: 15px;
     background-position-y: center;
     padding-left: 50px;
     border: none;
+}
+.input-container label {
+    flex: 1;
+}
 
+.inp-recherche {
+    display: block;
+    border: none;
+    width: 100%;
+    background: none;
+    padding-left: 15px;
+    color: var(--text);
+    outline: none;
+}
+
+.search-bar {
+    cursor: pointer;
+    display: flex;
+    height: 30px;
+}
+
+.btn-search {
+    background-color: var(--btn);
+    border: none;
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 14px;
+    padding: 15px;
+    min-width: 84px;
+    height: 75%;
+}
+
+.btn-search:hover {
+    cursor:pointer;
+    background-color: var(--btn-hover);
 }
 
 input::placeholder {
-    color: var(--text);
+    color: lightgray;);
     letter-spacing: 2px;
     font-size: 13px;
 }
@@ -102,99 +130,48 @@ input::placeholder {
     border: none;
 }
 
-li {
-    padding: 10px 20px;
-    text-align: justify;
-    font-size: 18px;
-}
-
-li:nth-child(1) {
-    margin-top: 15px;
-}
-
-
-.search-bar {
-    cursor: pointer;
+.bio {
     display: flex;
-    height: 30px;
+    align-items: center;
+    justify-content: center;
+    color: grey;
+    margin-bottom: 30px;
 }
 
-.btn-search{
-
-    margin-right: 7px;
-    background-color: var(--btn);
-    border: none;
-    border-radius: 10px;
-    color: var(--text);
-    font-size: 14px;
-    padding: 20px;
-}
-
-.btn-search:hover {
-    cursor:pointer;
-    background-color: var(--btn-hover);
-}
-
-.logo {
-    position: absolute;
-}
-
-.logo-location {
-    position: absolute;
-    bottom: 15%;
-    right: 60%;
-}
-
-.logo-twitter {
-    position: absolute;
-    bottom: 15%;
-    right: 20%;
-}
-
-.logo-company {
-    position: absolute;
-    bottom: 5%;
-    right: 20%;
-}
-.logo-website {
-    position: absolute;
-    bottom: 5%;
-    right: 60%;
-}
-
-.twitter-username {
-    position: absolute;
-    bottom: 10%;
-    right: 7%;
-}
-
-.company {
-    position: absolute;
-    bottom: 0%;
-    right: 7%;
-}
-
-.location {
-    position: absolute;
-    bottom: 11%;
-    right: 47%;
-}
-
-.link {
-    position: absolute;
-    bottom: 0%;
-    right: 47%;
+.login {
+    text-align: center;
+    font-size: 15px;
+    color: var(--btn);
 }
 
 .follows {
-    position: relative;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%, -20%);
+    margin: 0 auto 50px;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: #000;
-    margin: 10px;
+    justify-content: space-around;
+    background-color: var(--bg);
+    padding: 10px;
     width: 60%;
+    border-radius: 5px;
+}
+
+#follows-content {
+    text-align: center;
+    font-weight: bold;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.line {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.line img {
+    margin: 0 10px 0 0;
+    width: 20px;
 }

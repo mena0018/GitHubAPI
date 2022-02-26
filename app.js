@@ -14,11 +14,12 @@ const followers    = get(".followers");
 const following    = get(".following");
 const repos        = get(".repos");
 const bio          = get(".bio");
+const city         = get('.location');
 
 
 function check(param) {
     if (param === null || param === "") {
-        return "Pas disponible"
+        return "Not available"
     }
     return `${param}`
 }
@@ -32,16 +33,16 @@ async function dataGitHub(utilisateur) {
 
 function creationCarte(user) {
     avatar.src          =  check(user.avatar_url)
-    login.innerText     =  check(user.login);
+    login.innerText     =  `@${user.login}`;
     names.innerText     =  check(user.name);
-    location.innerHTML  =  check(user.location);
-    twitter.innerHTML   =  check(user.twitter_username);
+    bio.innerText       =  user.bio == null ? "This user doesn't have a biography" : `${user.bio}`;
+    city.innerText      =  check(user.location);
+    twitter.innerText   =  check(user.twitter_username);
     company.innerHTML   =  check(user.company);
-    link.innerHTML      =  check(user.blog);
+    link.innerHTML      =  check(user.html_url);
     followers.innerHTML =  check(user.followers);
     following.innerHTML =  check(user.following);
     repos.innerHTML     =  check(user.public_repos);
-    bio.innerHTML       =  check(user.bio);
 }
 
 
